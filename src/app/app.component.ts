@@ -24,8 +24,6 @@ export class AppComponent implements OnInit {
 
   constructor(private store: Store<AppState>) {}
   ngOnInit(): void {
-    //this.todos$ = this.store.select(state => state.todoState.todoList);
-    // use your own selector, pass in the todostate
 
     this.completedTodos$ = this.store.select(state =>
       selectCompletedTodos(state.todoState)
