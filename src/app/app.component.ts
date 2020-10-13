@@ -1,4 +1,4 @@
-import { Component, OnInit, VERSION } from "@angular/core";
+import { ChangeDetectionStrategy, Component, OnInit, VERSION } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
 import { AppState } from "./store/app.state";
@@ -12,7 +12,7 @@ import {
 @Component({
   selector: "my-app",
   templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"]
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent implements OnInit {
   public completedTodos$: Observable<Todo[]>;
