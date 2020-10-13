@@ -6,4 +6,4 @@ import { TodoState } from "./todo.state";
 export const selectTodos = (state: TodoState) => state.todoList;
 
 // create the selectCompletedTodos and SelectUncompletedTodos
-// use the docs of ngrx selectors
+// use the ngrx docs to learn how
