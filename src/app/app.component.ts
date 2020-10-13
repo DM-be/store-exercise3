@@ -11,16 +11,17 @@ import { AddTodoAction } from "./store/todo.action";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent implements OnInit {
-  public unfinishedTodos$: Observable<Todo[]>;
+  public completedTodos$: Observable<Todo[]>;
   public todos$: Observable<Todo[]>;
   public todoText: string;
 
-  public finishedTodos$: Observable<Todo[]>;
+  public uncompletedTodos$: Observable<Todo[]>;
 
   constructor(private store: Store<AppState>) {}
   ngOnInit(): void {
     //this.todos$ = this.store.select(state => state.todoState.todoList);
     // use your own selector, pass in the todostate
+    // 
 
   }
 
