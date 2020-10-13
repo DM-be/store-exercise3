@@ -4,6 +4,10 @@ import { Observable } from "rxjs";
 import { AppState } from "./store/app.state";
 import { Todo } from "./store/models/todo";
 import { AddTodoAction } from "./store/todo.action";
+import {
+  selectCompletedTodos,
+  selectUncompletedTodos
+} from "./store/todo.selectors";
 
 @Component({
   selector: "my-app",
@@ -21,8 +25,14 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     //this.todos$ = this.store.select(state => state.todoState.todoList);
     // use your own selector, pass in the todostate
-    // 
 
+    this.completedTodos$ = this.store.select(state =>
+      selectCompletedTodos(state.todoState)
+    );
+
+    this.uncompletedTodos$ = this.store.select(state =>
+      selectUncompletedTodos(state.todoState)
+    );
   }
 
   public addTodo() {
