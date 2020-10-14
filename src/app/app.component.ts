@@ -12,7 +12,6 @@ import { AddTodoAction } from "./store/todo.action";
 })
 export class AppComponent implements OnInit {
   public completedTodos$: Observable<Todo[]>;
-  public todos$: Observable<Todo[]>;
   public todoText: string;
 
   public uncompletedTodos$: Observable<Todo[]>;
